@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.7.18</version>  <!-- ✅ 使用 Spring Boot 2.7.10，支援 Java 8 -->
+        <relativePath/>
+    </parent>
+
+    <groupId>com.example</groupId>
+    <artifactId>announcement-system</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>announcement-system</name>
+    <description>Announcement System for Java 8</description>
+
+    <properties>
+        <java.version>1.8</java.version>  <!-- ✅ 指定 Java 8 -->
+        <hibernate.version>5.6.15.Final</hibernate.version>  <!-- ✅ Hibernate 5.x 支援 Java 8 -->
+    </properties>
+
+    <dependencies>
+        <!-- Spring Boot 核心 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- MySQL 驅動（適用 Java 8） -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.49</version>  <!-- ✅ 使用 5.1.49，適用 Java 8 -->
+            <scope>runtime</scope>
+        </dependency>
+
+        <!-- Hibernate 5（適用 Java 8） -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+        </dependency>
+
+        <!-- Spring Boot 測試 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Lombok（可選） -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
