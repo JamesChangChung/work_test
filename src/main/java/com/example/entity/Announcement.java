@@ -1,6 +1,9 @@
 package com.example.entity;
 
 import javax.persistence.*;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 @Entity
@@ -15,10 +18,12 @@ public class Announcement {
     private String content;
 
     @Temporal(TemporalType.TIMESTAMP)
-    private Date publishDate;  // ✅ Java 8 使用 Date 而非 Instant
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date publishDate;  
 
     @Temporal(TemporalType.TIMESTAMP)
-    private Date expiryDate;   // ✅ Java 8 使用 Date
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date expiryDate;   
 
     private String author;
 
@@ -29,34 +34,30 @@ public class Announcement {
     public void setId(int id) {
         this.id = id;
     }
-    private void setTitle(String title){
-        this.title = title;
-    }
-    private String getTitle(){
+    public String getTitle() {
         return title;
     }
-
-    private void setContent(String content){
-        this.content = content;
+    public void setTitle(String title) {
+        this.title = title;
     }
-    private String getContent(){
+    public String getContent() {
         return content;
     }
-
-    private void setauthor(String author){
-        this.author = author;
+    public void setContent(String content) {
+        this.content = content;
     }
-    private String getAuthor(){
+    public String getAuthor() {
         return author;
     }
-
+    public void setAuthor(String author) {
+        this.author = author;
+    }
     public Date getPublishDate() {
         return publishDate; 
     }
     public void setPublishDate(Date publishDate) { 
         this.publishDate = publishDate; 
     }
-
     public Date getExpiryDate() {
         return expiryDate;
     }

@@ -25,7 +25,7 @@ public class AnnouncementController {
 
     @GetMapping("/new")
     public String newAnnouncementForm(Model model) {
-        model.addAttribute("announcements", new Announcement());
+        model.addAttribute("announcement", new Announcement());
         return "announcement-form";
     }
 
@@ -37,7 +37,7 @@ public class AnnouncementController {
 
     @GetMapping("/edit/{id}")
     public String editAnnouncement(@PathVariable int id, Model model) {
-        model.addAttribute("announcements", announcementService.getAnnouncementById(id));
+        model.addAttribute("announcement", announcementService.getAnnouncementById(id));
         return "announcement-form";
     }
 
