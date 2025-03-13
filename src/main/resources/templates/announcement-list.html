@@ -19,7 +19,7 @@
             </thead>
             <tbody>
                 <tr th:each="announcement : ${announcements}">
-                    <td th:text="${announcement.title}"></td>
+                    <td><a th:href="@{/announcements/view/{id}(id=${announcement.id})}" th:text="${announcement.title}"></a></td>
                     <td th:text="${announcement.publishDate}"></td>
                     <td th:text="${announcement.expiryDate}"></td>
                     <td>

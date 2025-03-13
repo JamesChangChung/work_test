@@ -46,4 +46,10 @@ public class AnnouncementController {
         announcementService.deleteAnnouncement(id);
         return "redirect:/announcements";
     }
+
+    @GetMapping("/view/{id}")
+    public String viewAnnouncement(@PathVariable int id, Model model) {
+        model.addAttribute("announcement", announcementService.getAnnouncementById(id));
+        return "announcement-view";
+    }
 }

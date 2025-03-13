@@ -10,19 +10,29 @@
     <div class="container mt-4">
         <h2>公告編輯</h2>
         <form action="/announcements/save" method="post" th:object="${announcement}">
+
             <input type="hidden" th:field="*{id}"/>
+
             <div class="mb-3">
                 <label class="form-label">標題</label>
                 <input type="text" class="form-control" th:field="*{title}" required/>
             </div>
+
             <div class="mb-3">
                 <label class="form-label">發布日期</label>
                 <input type="date" class="form-control" th:field="*{publishDate}" required/>
             </div>
+
             <div class="mb-3">
                 <label class="form-label">截止日期</label>
                 <input type="date" class="form-control" th:field="*{expiryDate}" required/>
             </div>
+
+            <div class="mb-3">
+                <label class="form-label">作者</label>
+                <input type="text" class="form-control" th:field="*{author}" required/>
+            </div>
+
             <div class="mb-3">
                 <label class="form-label">公告內容</label>
                 <textarea id="contentEditor" class="form-control" th:field="*{content}"></textarea>
@@ -34,6 +44,7 @@
                     });
                 </script>
             </div>
+
             <button type="submit" class="btn btn-success">儲存</button>
             <a href="/announcements" class="btn btn-secondary">返回</a>
         </form>
