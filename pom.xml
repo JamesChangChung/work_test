@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.7.18</version>  <!-- ✅ 使用 Spring Boot 2.7.10，支援 Java 8 -->
+        <version>2.7.18</version>  <!--  Spring Boot 2.7.10 Java 8 -->
         <relativePath/>
     </parent>
 
@@ -17,12 +17,12 @@
     <description>Announcement System for Java 8</description>
 
     <properties>
-        <java.version>1.8</java.version>  <!-- ✅ 指定 Java 8 -->
-        <hibernate.version>5.6.15.Final</hibernate.version>  <!-- ✅ Hibernate 5.x 支援 Java 8 -->
+        <java.version>1.8</java.version>  <!--  Java 8 -->
+        <hibernate.version>5.6.15.Final</hibernate.version>  <!--  Hibernate 5.x  Java 8 -->
     </properties>
 
     <dependencies>
-        <!-- Spring Boot 核心 -->
+        <!-- Spring Boot  -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -36,11 +36,11 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!-- MySQL 驅動（適用 Java 8） -->
+        <!-- MySQL  -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.49</version>  <!-- ✅ 使用 5.1.49，適用 Java 8 -->
+            <version>5.1.49</version>  <!--  5.1.49 -->
             <scope>runtime</scope>
         </dependency>
 
@@ -57,7 +57,7 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- Lombok（可選） -->
+        <!-- Lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
