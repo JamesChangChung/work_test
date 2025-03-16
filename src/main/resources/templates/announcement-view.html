@@ -1,25 +1,38 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+    <meta charset="UTF-8">
     <title>公告詳情</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <style>
-        .content-center {
-            margin: 0 auto;
-            max-width: 800px;
-        }
-    </style>
 </head>
 <body>
-    <div class="container mt-4 content-center">
-        <h2 th:text="${announcement.title}">公告標題</h2>
-        <div>
-            <p><strong>發布日期：</strong> <span th:text="${announcement.publishDate}"></span></p>
-            <p><strong>截止日期：</strong> <span th:text="${announcement.expiryDate}"></span></p>
-            <p><strong>發佈者：</strong> <span th:text="${announcement.author}"></span></p>
+    <div class="container mt-4">
+        <h2>公告詳情</h2>
+        <div class="mb-3">
+            <label class="form-label">標題</label>
+            <p th:text="${announcement.title}"></p>
         </div>
-        <div th:utext="${announcement.content}"></div>
-        <a href="/announcements" class="btn btn-secondary mt-3">返回</a>
+        <div class="mb-3">
+            <label class="form-label">發布日期</label>
+            <p th:text="${announcement.publishDate}"></p>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">截止日期</label>
+            <p th:text="${announcement.expiryDate}"></p>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">作者</label>
+            <p th:text="${announcement.author}"></p>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">公告內容</label>
+            <p th:text="${announcement.content}"></p>
+        </div>
+        <div class="mb-3" th:if="${announcement.attachment}">
+            <label class="form-label">附件</label>
+            <a th:href="@{'/uploads/' + ${announcement.attachment}}" th:text="${announcement.attachment}"></a>
+        </div>
+        <a href="/announcements" class="btn btn-secondary">返回</a>
     </div>
 </body>
 </html>

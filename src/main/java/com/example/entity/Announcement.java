@@ -1,9 +1,7 @@
 package com.example.entity;
 
 import javax.persistence.*;
-
 import org.springframework.format.annotation.DateTimeFormat;
-
 import java.util.Date;
 
 @Entity
@@ -26,6 +24,8 @@ public class Announcement {
     private Date expiryDate;   
 
     private String author;
+
+    private String attachment; // 新增屬性
 
     // Getters and Setters
     public int getId() {
@@ -63,5 +63,11 @@ public class Announcement {
     }
     public void setExpiryDate(Date expiryDate) {
         this.expiryDate = expiryDate;
+    }
+    public String getAttachment() {
+        return attachment;
+    }
+    public void setAttachment(String attachment) {
+        this.attachment = attachment;
     }
 }
