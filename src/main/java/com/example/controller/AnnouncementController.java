@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -43,10 +44,15 @@ public class AnnouncementController {
                                    RedirectAttributes redirectAttributes) {
         if (!file.isEmpty()) {
             try {
+                File uploadDir = new File(UPLOAD_DIR);
+                if (!uploadDir.exists()) {
+                    uploadDir.mkdirs();
+                }
+                String fileName = file.getOriginalFilename().replace(" ", "_");
                 byte[] bytes = file.getBytes();
-                Path path = Paths.get(UPLOAD_DIR + file.getOriginalFilename());
+                Path path = Paths.get(UPLOAD_DIR + fileName);
                 Files.write(path, bytes);
-                announcement.setAttachment(file.getOriginalFilename());
+                announcement.setAttachment(fileName);
             } catch (IOException e) {
                 e.printStackTrace();
             }
