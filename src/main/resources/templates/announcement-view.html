@@ -45,7 +45,7 @@
         </div>
         <div class="mb-3" th:if="${announcement.attachment}">
             <label class="form-label">附件</label>
-            <a th:href="@{'/uploads/' + ${announcement.attachment}}" th:text="${announcement.attachment}" download></a>
+            <a th:href="@{'http://35.221.129.173/uploads/' + ${announcement.attachment}}" th:text="${announcement.attachment}" download></a>
         </div>
         <a href="/announcements" class="btn btn-secondary">返回</a>
     </div>
